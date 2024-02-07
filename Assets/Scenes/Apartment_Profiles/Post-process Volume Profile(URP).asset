@@ -56,7 +56,7 @@ MonoBehaviour:
   active: 1
   intensity:
     m_OverrideState: 1
-    m_Value: 0.05
+    m_Value: 0.126
 --- !u!114 &-5786560040267819657
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -133,7 +133,7 @@ MonoBehaviour:
     m_Value: 2.5
   focalLength:
     m_OverrideState: 1
-    m_Value: 38
+    m_Value: 57
   bladeCount:
     m_OverrideState: 0
     m_Value: 5
@@ -174,7 +174,7 @@ MonoBehaviour:
   active: 1
   postExposure:
     m_OverrideState: 1
-    m_Value: 1.68
+    m_Value: 3
   contrast:
     m_OverrideState: 0
     m_Value: 0
@@ -186,7 +186,7 @@ MonoBehaviour:
     m_Value: 0
   saturation:
     m_OverrideState: 1
-    m_Value: -31
+    m_Value: -66
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -234,7 +234,7 @@ MonoBehaviour:
     m_Value: 2
   intensity:
     m_OverrideState: 1
-    m_Value: 1
+    m_Value: 0.263
   clamp:
     m_OverrideState: 0
     m_Value: 0.05
@@ -252,14 +252,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   active: 1
   type:
-    m_OverrideState: 0
-    m_Value: 1
+    m_OverrideState: 1
+    m_Value: 0
   intensity:
     m_OverrideState: 1
-    m_Value: 0.256
+    m_Value: 0.588
   response:
     m_OverrideState: 0
-    m_Value: 0.8
+    m_Value: 0.568
   texture:
     m_OverrideState: 0
     m_Value: {fileID: 0}
@@ -278,7 +278,7 @@ MonoBehaviour:
   active: 1
   temperature:
     m_OverrideState: 1
-    m_Value: -22
+    m_Value: -18
   tint:
     m_OverrideState: 1
     m_Value: 0
@@ -486,13 +486,13 @@ MonoBehaviour:
   active: 1
   lift:
     m_OverrideState: 1
-    m_Value: {x: 0.9147002, y: 1, z: 0.9229999, w: 0}
+    m_Value: {x: 0.8439958, y: 1, z: 0.90120125, w: 0}
   gamma:
     m_OverrideState: 1
-    m_Value: {x: 0.83409333, y: 0.8833551, z: 1, w: 0}
+    m_Value: {x: 0.6915842, y: 0.7401085, z: 1, w: 0}
   gain:
     m_OverrideState: 1
-    m_Value: {x: 1, y: 0.8816522, z: 0.95217556, w: 0}
+    m_Value: {x: 0.99983317, y: 0.8537114, z: 1, w: 0}
 --- !u!114 &7577706499948078067
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -508,7 +508,7 @@ MonoBehaviour:
   active: 1
   intensity:
     m_OverrideState: 1
-    m_Value: 0.28
+    m_Value: 0.35
   xMultiplier:
     m_OverrideState: 0
     m_Value: 1
@@ -542,7 +542,7 @@ MonoBehaviour:
     m_Value: {x: 0.5, y: 0.5}
   intensity:
     m_OverrideState: 1
-    m_Value: 0.382
+    m_Value: 0.359
   smoothness:
     m_OverrideState: 0
     m_Value: 0.2
