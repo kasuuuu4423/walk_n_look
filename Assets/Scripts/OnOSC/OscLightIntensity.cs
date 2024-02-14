@@ -27,7 +27,7 @@ namespace OnOsc
                 if (osc.address == "/gain")
                 {
                     float value = osc.value * multiply;
-                    light.intensity = value;
+                    light.intensity = Mathf.Clamp(value, 0, initialIntensity + 1f);
                 }
             }
         }

@@ -8,6 +8,7 @@ using uOSC;
 public class OSCReceive : MonoBehaviour
 {
     public string address;
+    
     public string name;
     public float value;
     //private long lastTimeStamp;
