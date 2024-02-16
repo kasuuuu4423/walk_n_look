@@ -1,12 +1,13 @@
 using System.Collections.Generic;
-using TypeInspector;
+using System.Linq;
+using System;
 using Unity.VisualScripting;
 using UnityEngine;
 using Util;
 
 public class OnOscComponentToTarget<T> : MonoBehaviour
 {
-    [Header("“¯ƒIƒuƒWƒFƒNƒg‚É‘ÎÛƒRƒ“ƒ|[ƒlƒ“ƒg‚ğ’Ç‰Á‚µ‚Äw’è")]
+    [Header("ï¿½ï¿½ï¿½Iï¿½uï¿½Wï¿½Fï¿½Nï¿½gï¿½É‘ÎÛƒRï¿½ï¿½ï¿½|ï¿½[ï¿½lï¿½ï¿½ï¿½gï¿½ï¿½Ç‰ï¿½ï¿½ï¿½ï¿½Äwï¿½ï¿½")]
     [SerializeField] OnOSCBasic onOscComp;
     List<GameObject> targets = new List<GameObject>();
 
@@ -14,13 +15,37 @@ public class OnOscComponentToTarget<T> : MonoBehaviour
     void Start()
     {
         targets = GetChildren.ByType<T>(transform);
-        for (int i = 0; i < targets.Count; i++)
+        targets = targets.OrderBy(a => Guid.NewGuid()).ToList();
+        for (int i = 0; i <= targets.Count/3; i++)
         {
-            GameObject go = targets[i];
+            if(i == targets.Count/3){
+                if(targets.Count%3 == 0){
 
-            OnOSCBasic childComp = go.AddComponent<OnOSCBasic>();
-            childComp.osc = onOscComp.osc;
-            childComp.multiply = onOscComp.multiply;
+                    //GameObject HighGo = targets[i*3];
+                    //GameObject MidGo = targets[i*3+1];
+                    //GameObject LowGo = targets[i*3+2];
+
+                }else if(targets.Count%3 == 1){
+
+                    GameObject HighGo = targets[i*3];
+                    //GameObject MidGo = targets[i*3+1];
+                    //GameObject LowGo = targets[i*3+2];
+
+                }else if(targets.Count%3 == 2){
+
+                    GameObject HighGo = targets[i*3];
+                    GameObject MidGo = targets[i*3+1];
+                    //GameObject LowGo = targets[i*3+2];
+
+                }else{
+
+                    GameObject HighGo = targets[i*3];
+                    GameObject MidGo = targets[i*3+1];
+                    GameObject LowGo = targets[i*3+2];
+
+                }
+            }
+            
         }
     }
 
