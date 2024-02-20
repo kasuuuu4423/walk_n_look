@@ -67,15 +67,16 @@ namespace OnOsc
             return go;
         }
 
-
-
-        protected void SetTargets<T>(Transform transform) where T : Component
+        protected void SetTargetsByType<T>(Transform transform) where T : Component
         {
-
             targets = GetChildren.ByType<T>(transform);
 
         }
-
+        
+        protected void SetTargetByMaterial(Transform transform, Material[] mats)
+        {
+            targets = GetChildren.ByMaterial(transform, mats);
+        }
     }
 }
 
