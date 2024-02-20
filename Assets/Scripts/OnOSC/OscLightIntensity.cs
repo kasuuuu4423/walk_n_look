@@ -14,7 +14,7 @@ namespace OnOsc
 
         void Start()
         {
-          
+            base.Start();
             if(obj.GetComponent<Light>() != null)
             {
                 light = obj.GetComponent<Light>(); 

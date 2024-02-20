@@ -11,7 +11,7 @@ public class OnOSCBasic : MonoBehaviour
     [SerializeField] public float value = 1;
     [SerializeField] public string addr;
     // Start is called before the first frame update
-    void Start()
+    protected void Start()
     {
         if (obj == null)
         {
