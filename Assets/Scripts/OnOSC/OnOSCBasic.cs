@@ -5,11 +5,13 @@ using UnityEngine;
 public class OnOSCBasic : MonoBehaviour
 {
     [SerializeField] public OSCReceive osc;
-    [Header("w’è‚È‚µ‚Ìê‡“\‚è•t‚¯‚½ƒIƒuƒWƒFƒNƒg")]
+    //[Header("ï¿½wï¿½ï¿½È‚ï¿½ï¿½Ìê‡ï¿½ï¿½ï¿½tï¿½ï¿½ï¿½ï¿½ï¿½Iï¿½uï¿½Wï¿½Fï¿½Nï¿½g")]
     [SerializeField] public GameObject obj;
     [SerializeField] public float multiply = 1.0f;
+    [SerializeField] public float value = 1;
+    [SerializeField] public string addr;
     // Start is called before the first frame update
-    void Start()
+    protected void Start()
     {
         if (obj == null)
         {
@@ -18,8 +20,12 @@ public class OnOSCBasic : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    protected void Update()
     {
+        if(osc.address == addr)
+        {
+            value = osc.value*multiply;
+        }
         
     }
 }

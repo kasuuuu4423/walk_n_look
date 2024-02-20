@@ -8,6 +8,7 @@ namespace OnOsc
     {
         [Header("同オブジェクトに対象コンポーネントを追加して指定")]
         [SerializeField] OnOSCBasic onOscComp;
+
         void Start()
         {
             for (int i = 0; i < transform.childCount; i++)
