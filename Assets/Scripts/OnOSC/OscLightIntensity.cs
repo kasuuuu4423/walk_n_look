@@ -8,14 +8,16 @@ namespace OnOsc
     public class OscLightIntensity : OnOSCBasic
     {
         Light light;
+        
         float initialIntensity;
         // float scaleSpeed = 0.1f;
 
         void Start()
         {
+            base.Start();
             if(obj.GetComponent<Light>() != null)
             {
-                light = obj.GetComponent<Light>();
+                light = obj.GetComponent<Light>(); 
                 initialIntensity = light.intensity;
             }
         }
@@ -24,11 +26,8 @@ namespace OnOsc
         {
             if (light != null)
             {
-                if (osc.address == "/gain")
-                {
-                    float value = osc.value * multiply;
-                    light.intensity = value;
-                }
+                base.Update();
+                light.intensity = value * multiply;
             }
         }
     }
