@@ -5,7 +5,7 @@ namespace Util
 {
     public static class GetChildren
     {
-        public static List<GameObject> ByType<T>(Transform transform)
+        public static List<GameObject> ByType<T>(Transform transform) where T : Component
         {
             List<GameObject> children = new List<GameObject>();
             if (transform.gameObject.GetComponent<T>() == null && transform.childCount > 0)
