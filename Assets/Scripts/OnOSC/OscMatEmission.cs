@@ -13,7 +13,7 @@ namespace OnOsc
 
         void Start()
         {
-
+            base.Start();
             mat = obj.GetComponent<Renderer>().material;
             if( mat != null )
             {
@@ -25,12 +25,10 @@ namespace OnOsc
         {
             if (mat != null)
             {
-                if (osc.address == "/gain")
-                {
-                    float value = osc.value * multiply;
-                    mat.SetColor("_EmissionColor", new Color(initialColor.r + value, initialColor.r + value, initialColor.r + value));
-                    //StartCoroutine(ScaleObject(value));
-                }
+                base.Update();
+                float intensity = value * multiply;
+                mat.SetColor("_EmissionColor", new Color(initialColor.r * intensity, initialColor.r * intensity, initialColor.r * intensity));
+                //StartCoroutine(ScaleObject(value));
             }
         }
     }

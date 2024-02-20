@@ -15,7 +15,7 @@ namespace OnOsc
         {
             onOscType = typeof(OscLightIntensity);
             oscComp = oscLightIntensityComp;
-            SetTargets<Light>(transform);
+            SetTargetsByType<Light>(transform);
             base.Start();
         }
 
