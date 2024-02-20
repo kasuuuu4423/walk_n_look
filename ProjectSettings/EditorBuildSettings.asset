@@ -17,6 +17,9 @@ EditorBuildSettings:
     guid: 59aa509602f21614d9ddbd28d9852a7c
 =======
   m_Scenes: []
+<<<<<<< HEAD
 >>>>>>> 482a0b3 (スカイボックスのマテリアルのexposure変更)
+=======
+>>>>>>> develop
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: 9e7be553448fa2546aea5752021cbcf7, type: 2}
