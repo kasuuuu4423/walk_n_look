@@ -19,7 +19,7 @@ namespace OnOsc
 
 
         // Start is called before the first frame update
-       protected void Start()
+        protected void Start()
         {
             targets = targets.OrderBy(a => Guid.NewGuid()).ToList();
             for (int i = 0; i <= targets.Count / 3; i++)
@@ -65,6 +65,15 @@ namespace OnOsc
                 comp.multiply = oscComp.multiply;
             }
             return go;
+        }
+
+        protected void SetTargets(Transform transform)
+        {
+            targets = new List<GameObject>();
+            for (int i = 0; i < transform.childCount; i++)
+            {
+                targets.Add(transform.GetChild(i).gameObject);
+            }
         }
 
         protected void SetTargetsByType<T>(Transform transform) where T : Component
