@@ -23,27 +23,32 @@ namespace Util
             return children;
         }
 
-        public static List<GameObject> ByMaterial(Transform transform, Material[] mats)
+        public static List<GameObject> ByMaterial(Transform transform, Material[] mats, string suffix)
         {
             List<GameObject> children = new List<GameObject>();
             Renderer renderer = transform.gameObject.GetComponent<Renderer>();
             if(renderer != null)
             {
+                bool isTarget = false;
                 for(int i = 0; i < mats.Length; i++)
                 {
-                    if(renderer.material.name == mats[i].name + " (Instance)")
+                    if(renderer.material.name == mats[i].name + suffix)
                     {
                         children.Add(transform.gameObject);
+                        isTarget = true;
                     }
                 }
-                children.Add(transform.gameObject);
+                if (isTarget)
+                {
+                    children.Add(transform.gameObject);
+                }
             }
-            else if (transform.childCount > 0)
+            if (transform.childCount > 0)
             {
                 for (int i = 0; i < transform.childCount; i++)
                 {
                     Transform child = transform.GetChild(i);
-                    children.AddRange(ByMaterial(child, mats));
+                    children.AddRange(ByMaterial(child, mats, suffix));
                 }
             }
             return children;

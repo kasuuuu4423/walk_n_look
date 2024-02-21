@@ -73,9 +73,9 @@ namespace OnOsc
 
         }
         
-        protected void SetTargetByMaterial(Transform transform, Material[] mats)
+        protected void SetTargetByMaterial(Transform transform, Material[] mats, string suffix)
         {
-            targets = GetChildren.ByMaterial(transform, mats);
+            targets = GetChildren.ByMaterial(transform, mats, suffix);
         }
     }
 }
