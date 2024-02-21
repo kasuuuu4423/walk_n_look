@@ -242,10 +242,10 @@
                 {
                     "name": "",
                     "id": "11fe30c3-f4ca-45b0-bafb-b43f8cf6e947",
-                    "path": "<Gamepad>/dpad/down",
+                    "path": "<Gamepad>/buttonSouth",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
+                    "groups": "Gamepad",
                     "action": "Dance1",
                     "isComposite": false,
                     "isPartOfComposite": false
