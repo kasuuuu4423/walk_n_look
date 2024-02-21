@@ -12,13 +12,12 @@ namespace OnOsc
 
         [SerializeField] OscMatEmission oscMatEmmisionComp;
         [SerializeField] Material[] mats;
-        [SerializeField] string suffix = " (Instance)";
         void Start()
         {
             onOscType = typeof(OscMatEmission);
             oscComp = oscMatEmmisionComp;
 
-            SetTargetByMaterial(transform, mats, suffix);
+            SetTargetByMaterial(transform, mats);
             base.Start();
         }
 
