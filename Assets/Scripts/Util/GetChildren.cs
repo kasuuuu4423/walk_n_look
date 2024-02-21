@@ -29,16 +29,18 @@ namespace Util
             Renderer renderer = transform.gameObject.GetComponent<Renderer>();
             if(renderer != null)
             {
+                bool hasMaterial = false;
                 for(int i = 0; i < mats.Length; i++)
                 {
                     if(renderer.material.name == mats[i].name + " (Instance)")
                     {
                         children.Add(transform.gameObject);
+                        hasMaterial = true;
                     }
                 }
-                children.Add(transform.gameObject);
+                if(hasMaterial) children.Add(transform.gameObject);
             }
-            else if (transform.childCount > 0)
+            if (transform.childCount > 0)
             {
                 for (int i = 0; i < transform.childCount; i++)
                 {
