@@ -9,6 +9,7 @@ public class WhenUOSCReceive : MonoBehaviour
 {
     public string addr;
     public string name;
+    public bool useName = false;
     [ReadOnly]
     public string receiveName = "";
     public UnityEvent<float> targetFunction;
@@ -30,7 +31,7 @@ public class WhenUOSCReceive : MonoBehaviour
     void OnDataReceived(Message message)
     {
         string address = message.address;
-        foreach(var val in message.values)
+        foreach (var val in message.values)
         {
             if(val is string)
             {
@@ -40,6 +41,10 @@ public class WhenUOSCReceive : MonoBehaviour
                 {
                     targetVoidFunction.Invoke();
                 }
+            }
+            else if (!useName && address == addr)
+            {
+                targetVoidFunction.Invoke();
             }
             else if(val is int)
             {

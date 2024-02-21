@@ -9,7 +9,7 @@ namespace UILine
 {
     public class UILines : Graphic
     {
-        public static int linenum = 10;
+        public static int linenum = 5;
         public float[] weightMultiplies = new float[linenum];
 
         [SerializeField]
@@ -27,10 +27,10 @@ namespace UILine
             vh.Clear();
             for(int i = 0; i < linenum; i++)
             {
-                if (weightMultiplies[i] == 0)
-                {
-                    weightMultiplies[i] = 1;
-                }
+                //if (weightMultiplies[i] == 0)
+                //{
+                //    weightMultiplies[i] = 1;
+                //}
                 Vector2 linePosition = Vector2.Lerp(startPosition, endPosition, (float)i / (float)linenum);
                 AddVert(vh, new Vector2(startPosition.x, linePosition.y - _weight * weightMultiplies[i] / 2));
                 AddVert(vh, new Vector2(startPosition.x, linePosition.y + _weight * weightMultiplies[i] / 2));
