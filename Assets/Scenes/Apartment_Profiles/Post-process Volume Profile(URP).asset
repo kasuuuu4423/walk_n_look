@@ -41,6 +41,25 @@ MonoBehaviour:
   dirtIntensity:
     m_OverrideState: 1
     m_Value: 8.87
+--- !u!114 &-8323661976337182305
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b02545f16c60f2f489bc1785f8c8aa0d, type: 3}
+  m_Name: LowRes
+  m_EditorClassIdentifier: 
+  active: 1
+  on:
+    m_OverrideState: 1
+    m_Value: 1
+  height:
+    m_OverrideState: 1
+    m_Value: 250
 --- !u!114 &-7666745466245091546
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -213,6 +232,7 @@ MonoBehaviour:
   - {fileID: 336845294903558628}
   - {fileID: -4202919176047777736}
   - {fileID: 2059999683109459732}
+  - {fileID: -8323661976337182305}
 --- !u!114 &336845294903558628
 MonoBehaviour:
   m_ObjectHideFlags: 3
