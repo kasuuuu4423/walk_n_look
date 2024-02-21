@@ -728,7 +728,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4007291449629790, guid: e2e6970f9dbe45743858950d9b85475f, type: 3}
       propertyPath: m_RootOrder
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4007291449629790, guid: e2e6970f9dbe45743858950d9b85475f, type: 3}
       propertyPath: m_LocalPosition.x
@@ -7727,7 +7727,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3501299564383568843, guid: 6d397db7169d9ba46833dcc2b19a71b9, type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3501299564383568843, guid: 6d397db7169d9ba46833dcc2b19a71b9, type: 3}
       propertyPath: m_LocalPosition.x
@@ -8270,7 +8270,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   osc: {fileID: 1030052502}
   obj: {fileID: 0}
-  multiply: 0.03
+  multiply: 0.1
   value: 1
   addr: 
 --- !u!114 &1743433976
@@ -8286,6 +8286,40 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   oscLightIntensityComp: {fileID: 1743433975}
+--- !u!114 &1743433978
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1743433974}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7cd2fa78e05103845b0c3242306411da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  osc: {fileID: 1030052502}
+  obj: {fileID: 0}
+  multiply: 0.1
+  value: 1
+  addr: 
+--- !u!114 &1743433979
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1743433974}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d50b6bb6be6f4141ac2623b21f7917e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  oscMatEmmisionComp: {fileID: 1743433978}
+  mats:
+  - {fileID: 2100000, guid: 925b8fd9e0528aa439f35261c5d12cf8, type: 2}
+  - {fileID: 2100000, guid: 30d6b547b23512c4cba425e1f1215169, type: 2}
+  - {fileID: 2100000, guid: 64e2ee8987f77774fa23328f88ce3685, type: 2}
 --- !u!114 &1743990491
 MonoBehaviour:
   m_ObjectHideFlags: 0
