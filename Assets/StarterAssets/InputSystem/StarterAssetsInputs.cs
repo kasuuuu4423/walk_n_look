@@ -14,6 +14,8 @@ namespace StarterAssets
 		public bool sprint;
 		public bool dance1;
 		public bool dance2;
+		public bool cameraDistanceCloser;
+		public bool cameraDistanceFurther;
 
 		[Header("Movement Settings")]
 		public bool analogMovement;
@@ -54,6 +56,15 @@ namespace StarterAssets
         {
             Dance2Input(value.isPressed);
         }
+		public void OnCameraDistanceCloser(InputValue value)
+		{
+            CameraDistanceCloserInput(value.isPressed);
+        }
+
+		public void OnCameraDistanceFurther(InputValue value)
+		{
+			CameraDistanceCloserInput(value.isPressed);
+		}
 #endif
 
 
@@ -85,6 +96,17 @@ namespace StarterAssets
         {
             dance2 = newDance2State;
         }
+
+		public void CameraDistanceCloserInput(bool newCameraDistanceCloserState)
+		{
+			cameraDistanceCloser = newCameraDistanceCloserState;
+		}
+
+		public void CameraDistanceFurtherInput(bool newCameraDistanceFurtherState)
+		{
+			cameraDistanceFurther = newCameraDistanceFurtherState;
+		}
+
 
         private void OnApplicationFocus(bool hasFocus)
 		{

@@ -8,6 +8,7 @@ namespace OnOsc
     {
         [SerializeField] public Vector3 scalingVector;
         Vector3 initialScale;
+        bool isScaling = false;
 
         void Start()
         {
@@ -17,19 +18,23 @@ namespace OnOsc
 
         void Update()
         {
-            base.Update();
+            if (!isScaling)
+            {
+                base.Update();
+            }
             Vector3 targetScale = new Vector3(
                 initialScale.x + (scalingVector.x == 1 ? value : 0),
                 initialScale.y + (scalingVector.y == 1 ? value : 0),
                 initialScale.z + (scalingVector.z == 1 ? value : 0)
                 );
-            StartCoroutine(ScaleOverTime(targetScale, 3));
+            StartCoroutine(ScaleOverTime(targetScale, 10));
             //obj.transform.localScale = 
         }
 
 
         IEnumerator ScaleOverTime(Vector3 target, int frames)
         {
+            isScaling = true;
             Vector3 startScale = transform.localScale;
             Vector3 deltaScale = (target - startScale) / frames;
 
@@ -41,6 +46,7 @@ namespace OnOsc
 
             // Ensure the target scale is set exactly at the end
             transform.localScale = target;
+            isScaling = false;
         }
     }
 }

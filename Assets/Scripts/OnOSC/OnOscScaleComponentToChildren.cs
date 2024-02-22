@@ -19,14 +19,11 @@ namespace OnOsc
             base.Start();
             for (int i = 0; i < targets.Count; i++)
             {
-                if(UnityEngine.Random.Range(0, 10) < 1)
+                GameObject go = targets[i];
+                if (go.GetComponent<OscScale>() != null)
                 {
-                    GameObject go = targets[i];
-                    if (go.GetComponent<OscScale>() != null)
-                    {
-                        OscScale oscScale = go.GetComponent<OscScale>();
-                        oscScale.scalingVector = oscScaleComp.scalingVector;
-                    }
+                    OscScale oscScale = go.GetComponent<OscScale>();
+                    oscScale.scalingVector = oscScaleComp.scalingVector;
                 }
             }
         }
