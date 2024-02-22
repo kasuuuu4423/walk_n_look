@@ -5799,6 +5799,17 @@ MonoBehaviour:
   m_ShadowLayerMask: 1
   m_LightCookieSize: {x: 1, y: 1}
   m_LightCookieOffset: {x: 0, y: 0}
+--- !u!114 &531007827 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8534972914901760206, guid: 6d397db7169d9ba46833dcc2b19a71b9, type: 3}
+  m_PrefabInstance: {fileID: 1564676098}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d1ffd872ba621db4d97ac3c213cf3057, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &546709612
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8096,17 +8107,21 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 484789837}
     m_Modifications:
+    - target: {fileID: 408322724809556036, guid: dce889536cfc9054a96c9c182eaaa915, type: 3}
+      propertyPath: m_Follow
+      value: 
+      objectReference: {fileID: 1726189700}
     - target: {fileID: 408322724809556037, guid: dce889536cfc9054a96c9c182eaaa915, type: 3}
       propertyPath: m_LocalPosition.x
       value: 28.53
       objectReference: {fileID: 0}
     - target: {fileID: 408322724809556037, guid: dce889536cfc9054a96c9c182eaaa915, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 7.539999
+      value: 7.545
       objectReference: {fileID: 0}
     - target: {fileID: 1808125901279277508, guid: dce889536cfc9054a96c9c182eaaa915, type: 3}
       propertyPath: m_Height
-      value: 1.4
+      value: 1.2
       objectReference: {fileID: 0}
     - target: {fileID: 1808125901279277508, guid: dce889536cfc9054a96c9c182eaaa915, type: 3}
       propertyPath: m_Radius
@@ -8114,7 +8129,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1808125901279277508, guid: dce889536cfc9054a96c9c182eaaa915, type: 3}
       propertyPath: m_Center.y
-      value: 0.7
+      value: 0.6
       objectReference: {fileID: 0}
     - target: {fileID: 2128830034608067566, guid: dce889536cfc9054a96c9c182eaaa915, type: 3}
       propertyPath: m_RootOrder
@@ -8164,13 +8179,21 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 4176290016963362395, guid: dce889536cfc9054a96c9c182eaaa915, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7198444169815406017, guid: dce889536cfc9054a96c9c182eaaa915, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7293414815787900373, guid: dce889536cfc9054a96c9c182eaaa915, type: 3}
       propertyPath: m_LocalPosition.x
       value: 28.53
       objectReference: {fileID: 0}
     - target: {fileID: 7293414815787900373, guid: dce889536cfc9054a96c9c182eaaa915, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 7.539999
+      value: 7.545
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dce889536cfc9054a96c9c182eaaa915, type: 3}
@@ -8956,6 +8979,11 @@ MonoBehaviour:
   m_ShadowLayerMask: 1
   m_LightCookieSize: {x: 1, y: 1}
   m_LightCookieOffset: {x: 0, y: 0}
+--- !u!4 &1726189700 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3247123783586270365, guid: dce889536cfc9054a96c9c182eaaa915, type: 3}
+  m_PrefabInstance: {fileID: 1425533603}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &1740369418
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8993,7 +9021,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 22781b960f9e17b40aebcb882a847648, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  osc: {fileID: 0}
+  osc: {fileID: 531007827}
   type: 0
   obj: {fileID: 0}
   multiply: 0.1
@@ -9024,7 +9052,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7cd2fa78e05103845b0c3242306411da, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  osc: {fileID: 0}
+  osc: {fileID: 531007827}
   type: 0
   obj: {fileID: 0}
   multiply: 0.1
