@@ -11,6 +11,7 @@ namespace UILine
     {
         [SerializeField] UILines lines;
         [SerializeField] AudioSpectrumFromOsc spectrum;
+        [SerializeField] int max  = 255;
         List<float> reconstruct = new List<float>();
         // Start is called before the first frame update
         void Start()
@@ -25,7 +26,7 @@ namespace UILine
             reconstruct = spectrum.GetReconstruct(UILines.linenum);
             for(int i = 0; i < UILines.linenum; i++)
             {
-                lines.weightMultiplies[i] = Math.Map(reconstruct[i], 0, 255, 0, 25);
+                lines.weightMultiplies[i] = Math.Map(reconstruct[i], 0, 255, 0, max);
             }
         }
     }
