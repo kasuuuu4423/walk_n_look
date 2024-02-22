@@ -13,6 +13,7 @@ namespace StarterAssets
 		public bool jump;
 		public bool sprint;
 		public bool dance1;
+		public bool dance2;
 
 		[Header("Movement Settings")]
 		public bool analogMovement;
@@ -49,10 +50,14 @@ namespace StarterAssets
 		{
 			Dance1Input(value.isPressed);
 		}
+        public void OnDance2(InputValue value)
+        {
+            Dance2Input(value.isPressed);
+        }
 #endif
 
 
-		public void MoveInput(Vector2 newMoveDirection)
+        public void MoveInput(Vector2 newMoveDirection)
 		{
 			move = newMoveDirection;
 		} 
@@ -76,8 +81,12 @@ namespace StarterAssets
 		{
 			dance1 = newDance1State;
 		}
+        public void Dance2Input(bool newDance2State)
+        {
+            dance2 = newDance2State;
+        }
 
-		private void OnApplicationFocus(bool hasFocus)
+        private void OnApplicationFocus(bool hasFocus)
 		{
 			SetCursorState(cursorLocked);
 		}
