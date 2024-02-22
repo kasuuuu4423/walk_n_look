@@ -357,8 +357,8 @@ GameObject:
   m_Component:
   - component: {fileID: 7619097058303420319}
   - component: {fileID: 5966075803191088305}
-  - component: {fileID: 5242260510337000057}
   - component: {fileID: 7718996694443821961}
+  - component: {fileID: 8534972914901760206}
   m_Layer: 0
   m_Name: LMH
   m_TagString: Untagged
@@ -407,22 +407,6 @@ MonoBehaviour:
   _onDataReceivedEditor:
     m_PersistentCalls:
       m_Calls: []
---- !u!114 &5242260510337000057
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5487378932492783491}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1776ceef0bc5944f3a3e044651cb6487, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  address: 
-  name: 
-  value: 0
-  server: {fileID: 5966075803191088305}
 --- !u!114 &7718996694443821961
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -445,6 +429,23 @@ MonoBehaviour:
   targetVoidFunction:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &8534972914901760206
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5487378932492783491}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d1ffd872ba621db4d97ac3c213cf3057, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lAddress: /lmh/low
+  mAddress: /lmh/mid
+  hAddress: /lmh/hi
+  server: {fileID: 5966075803191088305}
+  address: 
 --- !u!1 &5596141679890672231
 GameObject:
   m_ObjectHideFlags: 0

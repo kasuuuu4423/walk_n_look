@@ -12,6 +12,7 @@ namespace OnOsc
         //[Header("���I�u�W�F�N�g�ɑΏۃR���|�[�l���g��ǉ����Ďw��")]
         protected OnOSCBasic oscComp;
         protected Type onOscType;
+        protected LMH.LMHType type;
         protected List<GameObject> targets = new List<GameObject>();
         protected List<GameObject> highTargets = new List<GameObject>();
         protected List<GameObject> midTargets = new List<GameObject>();
@@ -30,17 +31,17 @@ namespace OnOsc
                     {
                         if (j == 0)
                         {
-                            targets[i * 3 + j] = InitComponent(targets[i * 3 + j], "/lmh/hi", onOscType);
+                            targets[i * 3 + j] = InitComponent(targets[i * 3 + j], LMH.LMHType.H, onOscType);
                             highTargets.Add(targets[i * 3 + j]);
                         }
                         else if (j == 1)
                         {
-                            targets[i * 3 + j] = InitComponent(targets[i * 3 + j], "/lmh/mid", onOscType);
+                            targets[i * 3 + j] = InitComponent(targets[i * 3 + j], LMH.LMHType.M, onOscType);
                             midTargets.Add(targets[i * 3 + j]);
                         }
                         else if (j == 2)
                         {
-                            targets[i * 3 + j] = InitComponent(targets[i * 3 + j], "/lmh/low", onOscType);
+                            targets[i * 3 + j] = InitComponent(targets[i * 3 + j], LMH.LMHType.L, onOscType);
                             lowTargets.Add(targets[i * 3 + j]);
                         }
                     }
@@ -55,12 +56,12 @@ namespace OnOsc
 
         }
 
-        GameObject InitComponent(GameObject go, string addr, Type type)
+        GameObject InitComponent(GameObject go, LMH.LMHType lmhType, Type type)
         {
             if (go.GetComponent(type) == null)
             {
                 OnOSCBasic comp = (OnOSCBasic)go.AddComponent(type);
-                comp.addr = addr;
+                comp.type = lmhType;
                 comp.osc = oscComp.osc;
                 comp.multiply = oscComp.multiply;
             }

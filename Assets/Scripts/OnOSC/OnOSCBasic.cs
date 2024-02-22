@@ -2,30 +2,42 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class OnOSCBasic : MonoBehaviour
+namespace OnOsc
 {
-    [SerializeField] public OSCReceive osc;
+    public class OnOSCBasic : MonoBehaviour
+    {
+        [SerializeField] public OSCReceiveLMH osc;
+        [SerializeField] public LMH.LMHType type;
     //[Header("�w��Ȃ��̏ꍇ���t�����I�u�W�F�N�g")]
     [SerializeField] public GameObject obj;
-    [SerializeField] public float multiply = 1.0f;
-    [SerializeField] public float value = 1;
-    [SerializeField] public string addr;
-    // Start is called before the first frame update
-    protected void Start()
-    {
-        if (obj == null)
+        [SerializeField] public float multiply = 1.0f;
+        [SerializeField] public float value = 1;
+        [SerializeField] public string addr;
+        // Start is called before the first frame update
+        protected void Start()
         {
-            obj = gameObject;
+            if (obj == null)
+            {
+                obj = gameObject;
+            }
+        }
+
+        // Update is called once per frame
+        protected void Update()
+        {
+            if(type == LMH.LMHType.L)
+            {
+                value = osc.l.value;
+            }
+            else if(type == LMH.LMHType.M)
+            {
+                value = osc.m.value;
+            }
+            else if(type == LMH.LMHType.H)
+            {
+                value = osc.h.value;
+            }
         }
     }
 
-    // Update is called once per frame
-    protected void Update()
-    {
-        if(osc.address == addr)
-        {
-            value = osc.value*multiply;
-        }
-        
-    }
 }
