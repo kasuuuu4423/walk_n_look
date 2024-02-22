@@ -6055,6 +6055,11 @@ MonoBehaviour:
   m_ShadowLayerMask: 1
   m_LightCookieSize: {x: 1, y: 1}
   m_LightCookieOffset: {x: 0, y: 0}
+--- !u!4 &691067293 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1808125900568921433, guid: dce889536cfc9054a96c9c182eaaa915, type: 3}
+  m_PrefabInstance: {fileID: 1425533603}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &709746452
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8110,14 +8115,14 @@ PrefabInstance:
     - target: {fileID: 408322724809556036, guid: dce889536cfc9054a96c9c182eaaa915, type: 3}
       propertyPath: m_Follow
       value: 
-      objectReference: {fileID: 1726189700}
+      objectReference: {fileID: 691067293}
     - target: {fileID: 408322724809556037, guid: dce889536cfc9054a96c9c182eaaa915, type: 3}
       propertyPath: m_LocalPosition.x
       value: 28.53
       objectReference: {fileID: 0}
     - target: {fileID: 408322724809556037, guid: dce889536cfc9054a96c9c182eaaa915, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 7.545
+      value: 7.539999
       objectReference: {fileID: 0}
     - target: {fileID: 1808125901279277508, guid: dce889536cfc9054a96c9c182eaaa915, type: 3}
       propertyPath: m_Height
@@ -8193,7 +8198,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7293414815787900373, guid: dce889536cfc9054a96c9c182eaaa915, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 7.545
+      value: 7.539999
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dce889536cfc9054a96c9c182eaaa915, type: 3}
@@ -8979,11 +8984,6 @@ MonoBehaviour:
   m_ShadowLayerMask: 1
   m_LightCookieSize: {x: 1, y: 1}
   m_LightCookieOffset: {x: 0, y: 0}
---- !u!4 &1726189700 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 3247123783586270365, guid: dce889536cfc9054a96c9c182eaaa915, type: 3}
-  m_PrefabInstance: {fileID: 1425533603}
-  m_PrefabAsset: {fileID: 0}
 --- !u!114 &1740369418
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -59,7 +59,7 @@ MonoBehaviour:
     m_Value: 1
   height:
     m_OverrideState: 1
-    m_Value: 400
+    m_Value: 300
 --- !u!114 &-7666745466245091546
 MonoBehaviour:
   m_ObjectHideFlags: 3
