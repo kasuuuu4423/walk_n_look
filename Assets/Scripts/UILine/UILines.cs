@@ -31,7 +31,9 @@ namespace UILine
                 //{
                 //    weightMultiplies[i] = 1;
                 //}
-                Vector2 linePosition = Vector2.Lerp(startPosition, endPosition, (float)i / (float)linenum);
+                float t = (float)i / (float)linenum;
+                t += Random.Range(0.0f, 0.1f);
+                Vector2 linePosition = Vector2.Lerp(startPosition, endPosition, t);
                 AddVert(vh, new Vector2(startPosition.x, linePosition.y - _weight * weightMultiplies[i] / 2));
                 AddVert(vh, new Vector2(startPosition.x, linePosition.y + _weight * weightMultiplies[i] / 2));
                 AddVert(vh, new Vector2(endPosition.x, linePosition.y - _weight * weightMultiplies[i] / 2));
