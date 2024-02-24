@@ -200,9 +200,10 @@ MonoBehaviour:
   osc: {fileID: 1457881398}
   type: 2
   obj: {fileID: 0}
-  multiply: 1
+  multiply: 2
   value: 1
   addr: 
+  initialColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!1 &17315239
 GameObject:
   m_ObjectHideFlags: 0
@@ -532,9 +533,10 @@ MonoBehaviour:
   osc: {fileID: 1457881398}
   type: 1
   obj: {fileID: 0}
-  multiply: 1
+  multiply: 2
   value: 1
   addr: 
+  initialColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!1 &92237242
 GameObject:
   m_ObjectHideFlags: 0
@@ -666,9 +668,10 @@ MonoBehaviour:
   osc: {fileID: 1457881398}
   type: 0
   obj: {fileID: 0}
-  multiply: 1
+  multiply: 2
   value: 1
   addr: 
+  initialColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!1 &144321416 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 0dc4b015c366ff94ca786a1546f51d44, type: 3}
@@ -1604,7 +1607,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 463033291}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7cd2fa78e05103845b0c3242306411da, type: 3}
   m_Name: 
@@ -1612,9 +1615,10 @@ MonoBehaviour:
   osc: {fileID: 1457881398}
   type: 2
   obj: {fileID: 0}
-  multiply: 1
+  multiply: 2
   value: 1
   addr: 
+  initialColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!1001 &484862499
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1985,9 +1989,10 @@ MonoBehaviour:
   osc: {fileID: 1457881398}
   type: 0
   obj: {fileID: 0}
-  multiply: 1
+  multiply: 2
   value: 1
   addr: 
+  initialColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!1 &539504462
 GameObject:
   m_ObjectHideFlags: 0
@@ -2618,7 +2623,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_IsGlobal: 1
-  priority: 0
+  priority: 1
   blendDistance: 0
   weight: 1
   sharedProfile: {fileID: 11400000, guid: eb264dadecc009b4d8052c8e7bc61c07, type: 2}
@@ -10672,7 +10677,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _playerInput: {fileID: 1553891922}
   virtualCamera: {fileID: 1578746222}
-  _distancePerTime: 10
+  _distancePerTime: 7
 --- !u!114 &1553891929
 MonoBehaviour:
   m_ObjectHideFlags: 0

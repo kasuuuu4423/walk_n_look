@@ -8,7 +8,7 @@ namespace OnOsc
     public class OscMatEmission : OnOSCBasic
     {
         Material mat;
-        Color initialColor;
+        public Color initialColor;
         // float scaleSpeed = 0.1f;
 
         void Start()
