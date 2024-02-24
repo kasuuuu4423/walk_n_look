@@ -18,10 +18,10 @@ public class CreateBlockFloor : MonoBehaviour
                 Vector3 pos = new Vector3((i - size.x / 2) * blockPrefab.transform.localScale.x, 0, (j - size.y / 2) * blockPrefab.transform.localScale.z);
                 Vector3 scale = blockPrefab.transform.localScale;
                 GameObject block = GameObject.CreatePrimitive(PrimitiveType.Cube);
-                block.transform.position = pos;
+                block.transform.parent = transform;
+                block.transform.localPosition = pos;
                 block.transform.localScale = scale;
                 block.GetComponent<Renderer>().material = blockPrefab.GetComponent<Renderer>().material;
-                block.transform.parent = transform;
                 blocks[i * (int)size.y + j] = block;
             }
         }
