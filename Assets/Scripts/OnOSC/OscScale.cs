@@ -16,25 +16,25 @@ namespace OnOsc
             base.Start();
             initialScale = obj.transform.localScale;
             if(GetComponent<Collider>() != null)
-                GetComponent<Collider>().enabled = !disableCollider;
+                GetComponent<Collider>().enabled = false;
             else
                 for (int i = 0; i < obj.transform.childCount; i++)
                 {
                     Transform child = obj.transform.GetChild(i);
-                    if (child.gameObject.GetComponent<Collider>() != null)
-                        child.gameObject.GetComponent<Collider>().enabled = !disableCollider;
+                    if (child.gameObject.GetComponent<Collider>() != null && disableCollider)
+                        child.gameObject.GetComponent<Collider>().enabled = false;
                     else if (child.childCount > 0)
                         for (int j = 0; j < child.childCount; j++)
                         {
                             Transform grandchild = child.GetChild(j);
-                            if (grandchild.gameObject.GetComponent<Collider>() != null)
-                                grandchild.gameObject.GetComponent<Collider>().enabled = !disableCollider;
+                            if (grandchild.gameObject.GetComponent<Collider>() != null && disableCollider)
+                                grandchild.gameObject.GetComponent<Collider>().enabled = false;
                             else if(grandchild.childCount > 0)
                                 for (int k = 0; k < grandchild.childCount; k++)
                                 {
                                     Transform grandgrandchild = grandchild.GetChild(k);
-                                    if (grandgrandchild.gameObject.GetComponent<Collider>() != null)
-                                        grandgrandchild.gameObject.GetComponent<Collider>().enabled = !disableCollider;
+                                    if (grandgrandchild.gameObject.GetComponent<Collider>() != null && disableCollider)
+                                        grandgrandchild.gameObject.GetComponent<Collider>().enabled = false;
                                 }
                         }
                 }
