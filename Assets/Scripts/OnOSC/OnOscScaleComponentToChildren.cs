@@ -24,6 +24,8 @@ namespace OnOsc
                 {
                     OscScale oscScale = go.GetComponent<OscScale>();
                     oscScale.scalingVector = oscScaleComp.scalingVector;
+                    oscScale.disableCollider = oscScaleComp.disableCollider;
+
                 }
             }
         }

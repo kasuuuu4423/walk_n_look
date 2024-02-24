@@ -7,6 +7,7 @@ namespace OnOsc
     public class OscScale : OnOSCBasic
     {
         [SerializeField] public Vector3 scalingVector;
+        [SerializeField] public bool disableCollider = false;
         Vector3 initialScale;
         bool isScaling = false;
 
@@ -14,6 +15,24 @@ namespace OnOsc
         {
             base.Start();
             initialScale = obj.transform.localScale;
+            if(GetComponent<Collider>() != null)
+                GetComponent<Collider>().enabled = !disableCollider;
+            else
+                for (int i = 0; i < obj.transform.childCount; i++)
+                {
+                    Transform child = obj.transform.GetChild(i);
+                    if (child.gameObject.GetComponent<Collider>() != null)
+                        child.gameObject.GetComponent<Collider>().enabled = !disableCollider;
+                    else if (child.childCount > 0)
+                    {
+                        for (int j = 0; j < child.childCount; j++)
+                        {
+                            Transform grandchild = child.GetChild(j);
+                            if (grandchild.gameObject.GetComponent<Collider>() != null)
+                                grandchild.gameObject.GetComponent<Collider>().enabled = !disableCollider;
+                        }
+                    }
+                }
         }
 
         void Update()
@@ -23,9 +42,9 @@ namespace OnOsc
                 base.Update();
             }
             Vector3 targetScale = new Vector3(
-                initialScale.x + (scalingVector.x == 1 ? value : 0),
-                initialScale.y + (scalingVector.y == 1 ? value : 0),
-                initialScale.z + (scalingVector.z == 1 ? value : 0)
+                initialScale.x + (scalingVector.x == 1 ? value : 0) * multiply,
+                initialScale.y + (scalingVector.y == 1 ? value : 0) * multiply,
+                initialScale.z + (scalingVector.z == 1 ? value : 0) * multiply
                 );
             StartCoroutine(ScaleOverTime(targetScale, 10));
             //obj.transform.localScale = 
