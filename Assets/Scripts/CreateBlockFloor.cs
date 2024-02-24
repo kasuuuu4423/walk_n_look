@@ -17,10 +17,12 @@ public class CreateBlockFloor : MonoBehaviour
             {
                 Vector3 pos = new Vector3((i - size.x / 2) * blockPrefab.transform.localScale.x, 0, (j - size.y / 2) * blockPrefab.transform.localScale.z);
                 Vector3 scale = blockPrefab.transform.localScale;
-                GameObject block = GameObject.CreatePrimitive(PrimitiveType.Cube);
+                GameObject block = Instantiate(blockPrefab);
                 block.transform.parent = transform;
                 block.transform.localPosition = pos;
                 block.transform.localScale = scale;
+                block.transform.localRotation = Quaternion.Euler(0, Random.Range(0,100) > 50? -90:0, 0);
+                block.SetActive(true);
                 block.GetComponent<Renderer>().material = blockPrefab.GetComponent<Renderer>().material;
                 blocks[i * (int)size.y + j] = block;
             }

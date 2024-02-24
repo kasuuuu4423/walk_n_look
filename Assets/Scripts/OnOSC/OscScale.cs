@@ -37,14 +37,16 @@ namespace OnOsc
 
         void Update()
         {
+            float randomNoise = 0;
             if (!isScaling)
             {
                 base.Update();
+                randomNoise = Random.Range(-1f * value * 0.05f*multiply, value * 0.05f*multiply); ;
             }
             Vector3 targetScale = new Vector3(
-                initialScale.x + (scalingVector.x == 1 ? value : 0) * multiply,
-                initialScale.y + (scalingVector.y == 1 ? value : 0) * multiply,
-                initialScale.z + (scalingVector.z == 1 ? value : 0) * multiply
+                initialScale.x + (scalingVector.x == 1 ? value : 0) * multiply + randomNoise,
+                initialScale.y + (scalingVector.y == 1 ? value : 0) * multiply + randomNoise,
+                initialScale.z + (scalingVector.z == 1 ? value : 0) * multiply + randomNoise
                 );
             StartCoroutine(ScaleOverTime(targetScale, 10));
             //obj.transform.localScale = 

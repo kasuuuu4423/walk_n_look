@@ -26,7 +26,8 @@ namespace UILine
             reconstruct = spectrum.GetReconstruct(UILines.linenum);
             for(int i = 0; i < UILines.linenum; i++)
             {
-                lines.weightMultiplies[i] = Math.Map(reconstruct[i], 0, 255, 0, max);
+                float weight = Math.Map(reconstruct[i], 0, 255, 0, max);
+                lines.weightMultiplies[i] = weight;
             }
         }
     }

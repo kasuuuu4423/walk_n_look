@@ -9,7 +9,7 @@ namespace UILine
 {
     public class UILines : Graphic
     {
-        public static int linenum = 5;
+        public static int linenum = 10;
         public float[] weightMultiplies = new float[linenum];
 
         [SerializeField]
