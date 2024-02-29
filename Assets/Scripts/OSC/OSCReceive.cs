@@ -8,6 +8,7 @@ using uOSC;
 public class OSCReceive : MonoBehaviour
 {
     public string address;
+    
     public string name;
     public float value;
     //private long lastTimeStamp;
@@ -30,12 +31,7 @@ public class OSCReceive : MonoBehaviour
         {
             int tmpVal = 0;
             if(val is string) name = (string)val;
-            else if(val is float ) value = (float)val;
-            else if(val is int)
-            {
-                tmpVal = (int)val;
-                value = (float)tmpVal;
-            }
+            else if(val is int ) value = (int)val;
             else if(val is null)
             {
                 value = -1;

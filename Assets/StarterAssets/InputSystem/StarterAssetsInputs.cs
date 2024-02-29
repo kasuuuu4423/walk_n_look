@@ -12,6 +12,11 @@ namespace StarterAssets
 		public Vector2 look;
 		public bool jump;
 		public bool sprint;
+		public bool dance1;
+		public bool dance2;
+		public bool cameraDistanceCloser;
+		public bool cameraDistanceFurther;
+		public bool slow;
 
 		[Header("Movement Settings")]
 		public bool analogMovement;
@@ -43,10 +48,33 @@ namespace StarterAssets
 		{
 			SprintInput(value.isPressed);
 		}
+
+		public void OnDance1(InputValue value)
+		{
+			Dance1Input(value.isPressed);
+		}
+        public void OnDance2(InputValue value)
+        {
+            Dance2Input(value.isPressed);
+        }
+		public void OnCameraDistanceCloser(InputValue value)
+		{
+            CameraDistanceCloserInput(value.isPressed);
+        }
+
+		public void OnCameraDistanceFurther(InputValue value)
+		{
+			CameraDistanceFurtherInput(value.isPressed);
+		}
+
+		public void OnSlow(InputValue value)
+		{
+            SlowInput(value.isPressed);
+        }	
 #endif
 
 
-		public void MoveInput(Vector2 newMoveDirection)
+        public void MoveInput(Vector2 newMoveDirection)
 		{
 			move = newMoveDirection;
 		} 
@@ -66,7 +94,31 @@ namespace StarterAssets
 			sprint = newSprintState;
 		}
 
-		private void OnApplicationFocus(bool hasFocus)
+		public void Dance1Input(bool newDance1State)
+		{
+			dance1 = newDance1State;
+		}
+        public void Dance2Input(bool newDance2State)
+        {
+            dance2 = newDance2State;
+        }
+
+		public void CameraDistanceCloserInput(bool newCameraDistanceCloserState)
+		{
+			cameraDistanceCloser = newCameraDistanceCloserState;
+		}
+
+		public void CameraDistanceFurtherInput(bool newCameraDistanceFurtherState)
+		{
+			cameraDistanceFurther = newCameraDistanceFurtherState;
+		}
+		public void SlowInput(bool newSlowState)
+		{
+			slow = newSlowState;
+		}
+
+
+        private void OnApplicationFocus(bool hasFocus)
 		{
 			SetCursorState(cursorLocked);
 		}

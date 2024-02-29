@@ -1,0 +1,34 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using AudioSpectrum;
+using CustomMath;
+
+namespace UILine
+{
+    [RequireComponent(typeof(UILines))]
+    public class UILinesWithOSC : MonoBehaviour
+    {
+        [SerializeField] UILines lines;
+        [SerializeField] AudioSpectrumFromOsc spectrum;
+        [SerializeField] int max  = 255;
+        List<float> reconstruct = new List<float>();
+        // Start is called before the first frame update
+        void Start()
+        {
+            lines = GetComponent<UILines>();
+            reconstruct = spectrum.GetReconstruct(UILines.linenum);
+        }
+
+        // Update is called once per frame
+        void Update()
+        {
+            reconstruct = spectrum.GetReconstruct(UILines.linenum);
+            for(int i = 0; i < UILines.linenum; i++)
+            {
+                float weight = Math.Map(reconstruct[i], 0, 255, 0, max);
+                lines.weightMultiplies[i] = weight;
+            }
+        }
+    }
+}

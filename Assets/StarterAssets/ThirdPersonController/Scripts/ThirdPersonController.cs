@@ -97,6 +97,8 @@ namespace StarterAssets
         private int _animIDJump;
         private int _animIDFreeFall;
         private int _animIDMotionSpeed;
+        private int _animIDDance1;
+        private int _animIDDance2;
 
 #if ENABLE_INPUT_SYSTEM 
         private PlayerInput _playerInput;
@@ -159,6 +161,8 @@ namespace StarterAssets
             JumpAndGravity();
             GroundedCheck();
             Move();
+            Dance1();
+            Dance2();
         }
 
         private void LateUpdate()
@@ -173,6 +177,8 @@ namespace StarterAssets
             _animIDJump = Animator.StringToHash("Jump");
             _animIDFreeFall = Animator.StringToHash("FreeFall");
             _animIDMotionSpeed = Animator.StringToHash("MotionSpeed");
+            _animIDDance1 = Animator.StringToHash("Dance1");
+            _animIDDance2 = Animator.StringToHash("Dance2");
         }
 
         private void GroundedCheck()
@@ -348,6 +354,63 @@ namespace StarterAssets
             }
         }
 
+        private void Dance1()
+        {
+            if (Grounded)
+            {
+                if (_input.dance1)
+                {
+                    // update animator if using character
+                    if (_hasAnimator)
+                    {
+                        _animator.SetBool(_animIDDance1, true);
+                        _input.move = Vector2.zero;
+                    }
+                }
+                else
+                {
+                    // update animator if using character
+                    if (_hasAnimator)
+                    {
+                        _animator.SetBool(_animIDDance1, false);
+                    }
+                }
+            }
+            else
+            {
+                // if we are not grounded, do not attack
+                _input.dance1 = false;
+            }
+        }
+        private void Dance2()
+        {
+            if (Grounded)
+            {
+                if (_input.dance2)
+                {
+                    // update animator if using character
+                    if (_hasAnimator)
+                    {
+                        _animator.SetBool(_animIDDance2, true);
+                        _input.move = Vector2.zero;
+                    }
+                }
+                else
+                {
+                    // update animator if using character
+                    if (_hasAnimator)
+                    {
+                        _animator.SetBool(_animIDDance2, false);
+                    }
+                }
+            }
+            else
+            {
+                // if we are not grounded, do not attack
+                _input.dance2 = false;
+            }
+        }
+
         private static float ClampAngle(float lfAngle, float lfMin, float lfMax)
         {
             if (lfAngle < -360f) lfAngle += 360f;
@@ -385,7 +448,7 @@ namespace StarterAssets
         {
             if (animationEvent.animatorClipInfo.weight > 0.5f)
             {
-                AudioSource.PlayClipAtPoint(LandingAudioClip, transform.TransformPoint(_controller.center), FootstepAudioVolume);
+                //AudioSource.PlayClipAtPoint(LandingAudioClip, transform.TransformPoint(_controller.center), FootstepAudioVolume);
             }
         }
     }
